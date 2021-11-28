@@ -16,8 +16,9 @@ import App from "./components/App/App"
 import head from "./blocks/Head"
 import html from "./blocks/Html"
 import custom from "./blocks/Custom"
+import schema from "./blocks/Schema"
 
-const blocks = [ head, html, custom ];
+const blocks = [ head, html, schema, custom ];
 
 ReactDOM.render(
     <I18nextProvider i18n={ i18n }>

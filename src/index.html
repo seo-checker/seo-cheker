@@ -17,6 +17,26 @@
         <meta property="og:image:height" content="600" />
         <link rel="alternate" hreflang="ru-RU" href="#" />
         <title>Pellentesque habitant morbi tristique senectus et netus</title>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://seo-checker.github.io/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Example",
+                        "item": "https://seo-checker.github.io/index.html"
+                    }
+                ]
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -36,11 +56,23 @@
                     </li>
                 </ul>
             </nav>
+            <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="https://seo-checker.github.io/" itemprop="item">
+                        <span itemprop="name">Home</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Example</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ul>
         </header>
         <main>
             <h1>Pellentesque habitant morbi tristique senectus et netus</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl sem, euismod eu blandit et, porttitor quis magna. Nulla scelerisque, magna sit amet hendrerit scelerisque, libero purus rutrum erat, non commodo turpis est nec turpis. Vivamus bibendum, urna id fringilla lobortis, sapien erat efficitur diam, quis interdum dolor augue at enim. Phasellus sodales ultricies libero eget ultricies. Donec aliquet vel libero ac vehicula. Morbi justo est, rutrum eget pellentesque id, auctor non arcu. Aliquam imperdiet pretium sem, at rhoncus nisl iaculis ut. Praesent feugiat nulla nec mauris bibendum, vel aliquet sapien dictum. Sed et diam dignissim, lacinia leo et, lobortis ipsum. Nunc tempus, lacus nec aliquet varius, dui dolor pharetra diam, nec scelerisque sem risus at lacus. Donec sodales porttitor velit at pharetra. Nunc blandit lorem sit amet ullamcorper lobortis.</p>
-            <img src="https://via.placeholder.com/350x150" alt="Alt">
+            <img src="https://via.placeholder.com/350x150" alt="Alt" />
             <section>
                 <h2>Pellentesque habitant morbi tristique senectus et netus</h2>
                 <article>
