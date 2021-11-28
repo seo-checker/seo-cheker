@@ -1,6 +1,6 @@
 # SEO Cheker
 
-Simple on page [JS SEO checker](https://seo-cheker.github.io/), based on React, Redux and Chai
+Simple on page [JS SEO checker](https://seo-checker.github.io/), based on React, Redux and Chai
 
 ## Development
 ```sh
