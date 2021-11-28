@@ -1,0 +1,15 @@
+.seo-checker {
+
+    &-section {
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--results-border-color);
+    }
+
+    &-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--results-border-color);
+    }
+}

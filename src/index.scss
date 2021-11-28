@@ -1,0 +1,26 @@
+.seo-checker {
+    all: initial !important;
+    height: 0;
+    width: 0;
+
+    --loader-bg: #0073aa;
+
+    --header-bg:             #f3f3f3;
+    --header-border-color:   #dddddd;
+    --header-hover-color:    #e6e6e6;
+
+    --menu-bg:               #ececec;
+    --menu-border-color:     #dddddd;
+    --menu-link-bg:          #f3f3f3;
+    --menu-link-hover-bg:    #ccddee;
+    --menu-link-active-bg:   #0073aa;
+
+    --results-border-color:  #dddddd;
+    --results-test-hover-bg: #f9f9f9;
+
+    --success:    #27ae60;
+    --warning:    #f2c94c;
+    --warning-bg: #ffe69c;
+    --fail:       #eb5757;
+    --fail-bg:    #f1aeb5;
+}

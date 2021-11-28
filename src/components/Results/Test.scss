@@ -1,0 +1,58 @@
+.seo-checker {
+
+    p {
+        margin: 0;
+    }
+
+    &-test {
+        padding: 5px 5px 5px 25px;
+        position: relative;
+        
+        &:before {
+            position: absolute;
+            left: 5px;
+            top: 7px;
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background: var(--success);
+        }
+
+        &.fail:before {
+            background: var(--fail);
+        }
+
+        &.warning:before {
+            background: var(--warning);
+        }
+
+        p {
+            margin-top: 5px;
+            padding: 4px 10px;
+            border-radius: 5px;
+
+            &:empty {
+                display: none;
+            }
+        }
+
+        &.fail p {
+            background: var(--fail-bg);
+        }
+
+        &.warning p {
+            background: var(--warning-bg);
+        }
+    }
+
+    p + &-test {
+        margin-top: 5px;
+    }
+
+    &-section &-test:hover {
+        background: var(--results-test-hover-bg);
+    }
+}

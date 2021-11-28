@@ -1,0 +1,45 @@
+.seo-checker {
+
+    &-menu {
+        display: block;
+        height: 100%;
+        width: 200px;
+        overflow-y: scroll;
+        background: var(--menu-bg);
+        flex-shrink: 0;
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+
+                a {
+                    display: block;
+                    padding: 6px 10px;
+                    color: inherit;
+                    text-decoration: none;
+                    background: var(--menu-link-bg);
+                    border-bottom: 1px solid var(--menu-border-color);
+
+                    &:hover {
+                        background: var(--menu-link-hover-bg);
+                    }
+                }
+
+                &.active {
+
+                    a {
+                        background: var(--menu-link-active-bg);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
