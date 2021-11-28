@@ -121,8 +121,7 @@ class App extends Component {
 }
 function mapStateToProps(state) {
     return {
-        page: state.page.value,
-        custom: state.page.custom
+        page: state.page.value
     };
 }
 
