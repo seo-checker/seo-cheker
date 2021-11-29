@@ -52,7 +52,7 @@ export const Header = {
                 {
                     slug: 'author',
                     name: "The page has author meta tag",
-                    selector: "meta[name='author']",
+                    selector: "head > meta[name='author']",
                     iswarning: true,
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
@@ -63,7 +63,7 @@ export const Header = {
                 {
                     slug: 'description',
                     name: "The page has description meta tag",
-                    selector: "meta[name='description']",
+                    selector: "head > meta[name='description']",
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
                         const content = el[0]?.getAttribute('content') ?? '';
@@ -85,7 +85,7 @@ export const Header = {
                 {
                     slug: 'robots',
                     name: "The page has robots meta tag",
-                    selector: "meta[name='robots']",
+                    selector: "head > meta[name='robots']",
                     iswarning: true,
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
