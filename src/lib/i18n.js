@@ -11,6 +11,9 @@ i18n
         detection: {
             order: ['querystring', 'navigator', 'htmlTag', 'path', 'subdomain'],
         },
+        backend: {
+            loadPath: (document.seo ?? '') + '/locales/{{lng}}/{{ns}}.json'
+        },
         fallbackLng: 'en',
         debug: true
     });
