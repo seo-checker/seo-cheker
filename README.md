@@ -20,7 +20,7 @@ Add this code to the page, before closing &lt;body&gt;
 Add this code to the page, before closing &lt;body&gt;
 ```html
 <script>
-  (function(s,e,o){a=s.body;c=s.createElement("div");c.id=e,a.appendChild(c);h=s.createElement("script");h.src=o+e+".js";a.appendChild(h);k=s.createElement("link");k.href=o+e+".css";k.rel="stylesheet";a.appendChild(k),a.seo=o})(document, "seo-checker", "https://seo-checker.github.io/")
+  (function(s,e,o){a=s.body;c=s.createElement("div");c.id=e,a.appendChild(c);h=s.createElement("script");h.src=o+e+".js";a.appendChild(h);k=s.createElement("link");k.href=o+e+".css";k.rel="stylesheet";a.appendChild(k),s.seo=o})(document, "seo-checker", "https://seo-checker.github.io/")
 </script>
 ```
 
