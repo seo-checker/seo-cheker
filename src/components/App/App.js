@@ -88,16 +88,16 @@ class App extends Component {
                         <div className="seo-checker-header-title">
                             SEO cheker
                         </div>
-                        <button onClick={ this.handleSettings.bind(this) }>
+                        <a onClick={ this.handleSettings.bind(this) }>
                             <span>
                                 <MdSettings />
                             </span>
-                        </button>
-                        <button onClick={ this.handleClose.bind(this) }>
+                        </a>
+                        <a onClick={ this.handleClose.bind(this) }>
                             <span>
                                 <MdClose />
                             </span>
-                        </button>
+                        </a>
                     </div>
                     <div className="seo-checker-container">
                         <Suspense fallback={<Loader />}>

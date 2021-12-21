@@ -21,7 +21,7 @@ const Html = {
                     func: (el, expect) => {
                         let headers = [];
                         headers = el.map(node => {
-                            const isBlockHeader = node.closest('article') || node.closest('section');
+                            const isBlockHeader = node.closest('article') || node.closest('main') || node.closest('section');
                             return !isBlockHeader;
                         });
                         headers = headers.filter(Boolean);
