@@ -1,5 +1,24 @@
 .seo-checker {
 
+    &-button {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        z-index: 999999998;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 30px;
+        padding: 0 15px;
+        border-radius: 15px;
+        background-color: var(--button-bg);
+        color: white;
+
+        &:hover {
+            background-color: var(--button-bg-hover);
+        }
+    }
+
     &-wrapper {
         position: fixed;
         left: 0;

@@ -26,6 +26,7 @@
                     text-decoration: none;
                     background: var(--menu-link-bg);
                     border-bottom: 1px solid var(--menu-border-color);
+                    cursor: pointer;
 
                     &:hover {
                         background: var(--menu-link-hover-bg);

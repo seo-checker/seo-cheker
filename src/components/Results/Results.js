@@ -9,10 +9,10 @@ import Error from "../Error/Error"
 class Results extends Component {
 
     getBlock() {
-        const blocks = this.props.blocks;
-        const current = this.props.page;
+        const { blocks, checker } = this.props;
+        const { page } = checker;
         for (let index = 0; index < blocks.length; index++) {
-            if (current === blocks[index].slug)
+            if (page === blocks[index].slug)
                 return blocks[index];
         }
         return blocks[0] || null;
@@ -39,7 +39,7 @@ class Results extends Component {
 
 function mapStateToProps(state) {
     return {
-        page: state.page.value
+        checker: state.checker
     };
 }
 

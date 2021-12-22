@@ -8,7 +8,8 @@ import { setPage } from '../../lib/store'
 class Selector extends Component {
 
     render() {
-        const { blocks, page } = this.props;
+        const { blocks, checker } = this.props;
+        const { page } = checker;
         const { t } = this.props.i18n;
         return (
             <div className="seo-checker-selector">
@@ -34,7 +35,7 @@ class Selector extends Component {
 
 function mapStateToProps(state) {
     return {
-        page: state.page.value
+        checker: state.checker
     };
 }
 

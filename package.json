@@ -1,6 +1,6 @@
 {
   "name": "seo-checker",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "SEO checker",
   "main": "index.js",
   "scripts": {

@@ -2,7 +2,7 @@ import "./App.scss"
 
 import React, { Component, Suspense } from "react"
 import { connect } from 'react-redux'
-import { setPage } from '../../lib/store'
+import { setPage, toggleVisibility } from '../../lib/store'
 
 import { MdSettings, MdClose } from "react-icons/md"
 
@@ -52,10 +52,6 @@ class App extends Component {
         this.props.setPage('settings');
     }
 
-    handleClose() {
-        this.wrapper.current.style.visibility = 'hidden';
-    }
-
     componentDidMount() {
         const wrapper = this.wrapper.current;
         const height = this._ls.getItem('seo-checker-height') ?? 200;
@@ -63,10 +59,15 @@ class App extends Component {
     }
 
     render() {
-        const { blocks, page } = this.props;
+        const { blocks, checker } = this.props;
+        const { page, visibility } = checker;
+        const style = {
+            visibility: visibility ? 'visible' : 'hidden'
+        }
         return (
-            <div className="seo-checker" >
-                <div className="seo-checker-wrapper" ref={ this.wrapper }>
+            <div className="seo-checker">
+                <a className="seo-checker-button" onClick={ () => this.props.toggleVisibility() }>SEO Checker</a>
+                <div className="seo-checker-wrapper" ref={ this.wrapper } style={ style }>
                     <div className="seo-checker-header"
                         onMouseDown={ this.handleResize.bind(this) }
                         onTouchStart={ this.handleResize.bind(this) }
@@ -93,7 +94,7 @@ class App extends Component {
                                 <MdSettings />
                             </span>
                         </a>
-                        <a onClick={ this.handleClose.bind(this) }>
+                        <a onClick={ () => this.props.toggleVisibility() }>
                             <span>
                                 <MdClose />
                             </span>
@@ -121,8 +122,8 @@ class App extends Component {
 }
 function mapStateToProps(state) {
     return {
-        page: state.page.value
+        checker: state.checker
     };
 }
 
-export default connect(mapStateToProps, { setPage })(App)
+export default connect(mapStateToProps, { setPage, toggleVisibility })(App)

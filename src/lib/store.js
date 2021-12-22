@@ -2,23 +2,28 @@ import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 const _ls = window.localStorage;
 
-export const pageSlice = createSlice({
-    name: 'page',
+export const checkerSlice = createSlice({
+    name: 'checker',
     initialState: {
-        value: _ls.getItem('seo-checker-current') ?? 'head',
+        page: _ls.getItem('seo-checker-current') ?? 'head',
+        visibility: _ls.getItem('seo-checker-visibility') != null ? !!parseInt(_ls.getItem('seo-checker-visibility')) : true,
     },
     reducers: {
         setPage: (state, action) => {
-            state.value = action.payload;
+            state.page = action.payload;
             _ls.setItem('seo-checker-current', action.payload);
+        },
+        toggleVisibility: state => {
+            state.visibility = !state.visibility;
+            _ls.setItem('seo-checker-visibility', +state.visibility);
         }
     }
 });
 
-export const { setPage } = pageSlice.actions;
+export const { setPage, toggleVisibility } = checkerSlice.actions;
 
 export default configureStore({
     reducer: {
-        page: pageSlice.reducer
+        checker: checkerSlice.reducer
     },
 })

@@ -1,9 +1,13 @@
 .seo-checker {
     all: initial !important;
+    font-family: Arial, Helvetica, sans-serif;
     height: 0;
     width: 0;
 
     --loader-bg: #0073aa;
+
+    --button-bg:             #212121;
+    --button-bg-hover:       #333333;
 
     --header-bg:             #f3f3f3;
     --header-border-color:   #dddddd;

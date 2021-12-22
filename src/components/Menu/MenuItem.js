@@ -8,11 +8,11 @@ class Menuitem extends Component {
     render() {
         const { slug, name } = this.props.params;
         const { t } = this.props.i18n;
-        const current = this.props.page;
+        const { page } = this.props.checker;
         
         return (
-            <li className={ slug === current ? 'active' : null }>
-                <a href="#" onClick={ () => { this.props.setPage(slug); } }>
+            <li className={ slug === page ? 'active' : null }>
+                <a onClick={ () => { this.props.setPage(slug); } }>
                     { t(slug, name) }
                 </a>
             </li>
@@ -22,7 +22,7 @@ class Menuitem extends Component {
 
 function mapStateToProps(state) {
     return {
-        page: state.page.value
+        checker: state.checker
     };
 }
 
