@@ -11,6 +11,7 @@ export const Header = {
                     slug: 'exists',
                     selector: "head > title",
                     name: "The page has title tag",
+                    results: true,
                     func: (el, expect) => {
                         expect(el).to.exist;
                     },

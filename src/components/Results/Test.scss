@@ -29,6 +29,23 @@
             background: var(--warning);
         }
 
+        div {
+
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                height: 18px;
+                margin-left: 5px;
+                cursor: pointer;
+
+                svg {
+                    margin-top: 1px;
+                    height: 16px;
+                    width: 16px;
+                }
+            }
+        }
+
         p {
             margin-top: 5px;
             padding: 4px 10px;
