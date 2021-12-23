@@ -59,6 +59,45 @@
                 ]
             }
         </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": "Executive Anvil",
+                "image": ["https://example.com/photos/1x1/photo.jpg", "https://example.com/photos/4x3/photo.jpg", "https://example.com/photos/16x9/photo.jpg"],
+                "description": "Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.",
+                "sku": "0446310786",
+                "mpn": "925872",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "ACME"
+                },
+                "review": {
+                    "@type": "Review",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "4",
+                        "bestRating": "5"
+                    },
+                    "author": {
+                        "@type": "Person",
+                        "name": "Fred Benson"
+                    }
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.4",
+                    "reviewCount": "89"
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "offerCount": "5",
+                    "lowPrice": "119.99",
+                    "highPrice": "199.99",
+                    "priceCurrency": "USD"
+                }
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -98,22 +137,55 @@
             <section>
                 <h2>Pellentesque habitant morbi tristique senectus et netus</h2>
                 <article itemscope itemtype="https://schema.org/Article">
-                    <meta itemprop="description" name="description" content="Phasellus faucibus vulputate diam quis vulputate. Etiam blandit efficitur fringilla.">
-                    <meta itemprop="author" name="author" content="Author">
-                    <meta itemprop="image" content="#">
+                    <meta itemprop="description" name="description" content="Phasellus faucibus vulputate diam quis vulputate. Etiam blandit efficitur fringilla." />
+                    <meta itemprop="author" name="author" content="Author" />
+                    <meta itemprop="image" content="#" />
                     <time itemprop="datePublished" datetime="1970-01-01 00:00:00">01.01.1970 00:00:00</time>
                     <h3 itemprop="headline">Pellentesque habitant morbi tristique senectus et netus</h3>
-                    <!-- <p itemprop="articleBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl sem, euismod eu blandit et, porttitor quis magna. Nulla scelerisque, magna sit amet hendrerit scelerisque, libero purus rutrum erat, non commodo turpis est nec turpis. Vivamus bibendum, urna id fringilla lobortis, sapien erat efficitur diam, quis interdum dolor augue at enim. Phasellus sodales ultricies libero eget ultricies. Donec aliquet vel libero ac vehicula. Morbi justo est, rutrum eget pellentesque id, auctor non arcu. Aliquam imperdiet pretium sem, at rhoncus nisl iaculis ut. Praesent feugiat nulla nec mauris bibendum, vel aliquet sapien dictum. Sed et diam dignissim, lacinia leo et, lobortis ipsum. Nunc tempus, lacus nec aliquet varius, dui dolor pharetra diam, nec scelerisque sem risus at lacus. Donec sodales porttitor velit at pharetra. Nunc blandit lorem sit amet ullamcorper lobortis.</p> -->
+                    <p itemprop="articleBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl sem, euismod eu blandit et, porttitor quis magna. Nulla scelerisque, magna sit amet hendrerit scelerisque, libero purus rutrum erat, non commodo turpis est nec turpis. Vivamus bibendum, urna id fringilla lobortis, sapien erat efficitur diam, quis interdum dolor augue at enim. Phasellus sodales ultricies libero eget ultricies. Donec aliquet vel libero ac vehicula. Morbi justo est, rutrum eget pellentesque id, auctor non arcu. Aliquam imperdiet pretium sem, at rhoncus nisl iaculis ut. Praesent feugiat nulla nec mauris bibendum, vel aliquet sapien dictum. Sed et diam dignissim, lacinia leo et, lobortis ipsum. Nunc tempus, lacus nec aliquet varius, dui dolor pharetra diam, nec scelerisque sem risus at lacus. Donec sodales porttitor velit at pharetra. Nunc blandit lorem sit amet ullamcorper lobortis.</p>
                 </article>
                 <article itemscope itemtype="https://schema.org/Article">
-                    <meta itemprop="description" name="description" content="Phasellus faucibus vulputate diam quis vulputate. Etiam blandit efficitur fringilla.">
-                    <meta itemprop="author" name="author" content="Author">
+                    <meta itemprop="description" name="description" content="Phasellus faucibus vulputate diam quis vulputate. Etiam blandit efficitur fringilla." />
+                    <meta itemprop="author" name="author" content="Author" />
                     <header>
                         <h3 itemprop="headline">Pellentesque habitant morbi tristique senectus et netus</h3>
                     </header>
                     <time itemprop="datePublished" datetime="1970-01-01 00:00:00">01.01.1970 00:00:00</time>
                     <p itemprop="articleBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl sem, euismod eu blandit et, porttitor quis magna. Nulla scelerisque, magna sit amet hendrerit scelerisque, libero purus rutrum erat, non commodo turpis est nec turpis. Vivamus bibendum, urna id fringilla lobortis, sapien erat efficitur diam, quis interdum dolor augue at enim. Phasellus sodales ultricies libero eget ultricies. Donec aliquet vel libero ac vehicula. Morbi justo est, rutrum eget pellentesque id, auctor non arcu. Aliquam imperdiet pretium sem, at rhoncus nisl iaculis ut. Praesent feugiat nulla nec mauris bibendum, vel aliquet sapien dictum. Sed et diam dignissim, lacinia leo et, lobortis ipsum. Nunc tempus, lacus nec aliquet varius, dui dolor pharetra diam, nec scelerisque sem risus at lacus. Donec sodales porttitor velit at pharetra. Nunc blandit lorem sit amet ullamcorper lobortis.</p>
                 </article>
+                <div itemtype="https://schema.org/Product" itemscope>
+                    <meta itemprop="mpn" content="925872" />
+                    <meta itemprop="name" content="Executive Anvil" />
+                    <link itemprop="image" href="https://example.com/photos/16x9/photo.jpg" />
+                    <link itemprop="image" href="https://example.com/photos/4x3/photo.jpg" />
+                    <link itemprop="image" href="https://example.com/photos/1x1/photo.jpg" />
+                    <meta itemprop="description" content="Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height." />
+                    <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
+                        <link itemprop="url" href="https://example.com/anvil" />
+                        <meta itemprop="availability" content="https://schema.org/InStock" />
+                        <meta itemprop="priceCurrency" content="USD" />
+                        <meta itemprop="itemCondition" content="https://schema.org/UsedCondition" />
+                        <meta itemprop="price" content="119.99" />
+                        <meta itemprop="priceValidUntil" content="2020-11-20" />
+                    </div>
+                    <div itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating" itemscope>
+                        <meta itemprop="reviewCount" content="89" />
+                        <meta itemprop="ratingValue" content="4.4" />
+                    </div>
+                    <div itemprop="review" itemtype="https://schema.org/Review" itemscope>
+                        <div itemprop="author" itemtype="https://schema.org/Person" itemscope>
+                            <meta itemprop="name" content="Fred Benson" />
+                        </div>
+                        <div itemprop="reviewRating" itemtype="https://schema.org/Rating" itemscope>
+                            <meta itemprop="ratingValue" content="4" />
+                            <meta itemprop="bestRating" content="5" />
+                        </div>
+                    </div>
+                    <meta itemprop="sku" content="0446310786" />
+                    <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
+                        <meta itemprop="name" content="ACME" />
+                    </div>
+                </div>
             </section>
             <aside>
                 <article>
