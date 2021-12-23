@@ -3,6 +3,8 @@ import "./Test.scss"
 import React, { Component } from "react"
 import { withTranslation } from 'react-i18next'
 
+import { html } from 'js-beautify'
+
 import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
 
 import chai from "../../lib/chai"
@@ -64,8 +66,9 @@ class Test extends Component {
             } else {
                 code = el.map(item => item.outerHTML).join("\n");
             }
-            console.log(code);
         }
+
+        code = html(code, { indent_size: 2, space_in_empty_paren: false });
 
 
         return (
