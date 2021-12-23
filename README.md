@@ -2,6 +2,8 @@
 
 Simple on page [JS SEO checker](https://seo-checker.github.io/), based on React, Redux and Chai
 
+![banner](https://raw.githubusercontent.com/seo-checker/seo-cheker/master/assets/banner-1544x500.png)
+
 ## Development
 ```sh
 npm i
