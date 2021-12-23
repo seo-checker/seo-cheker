@@ -42,7 +42,27 @@
                     margin-top: 1px;
                     height: 16px;
                     width: 16px;
+                    fill: var(--expand);
                 }
+            }
+        }
+
+        pre {
+            margin: 5px 0 0;
+            background-color: black;
+            color: white;
+
+            code {
+                padding: 5px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        &:not(.expanded) {
+
+            & > pre {
+                display: none !important;
             }
         }
 

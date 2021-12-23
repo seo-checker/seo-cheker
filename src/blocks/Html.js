@@ -73,6 +73,7 @@ const Html = {
                     slug: 'h1',
                     name: "The page has H1 tag",
                     selector: 'h1',
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -184,6 +185,7 @@ const Html = {
                     name: "The page has images",
                     selector: 'img',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -205,6 +207,7 @@ const Html = {
                 {
                     slug: 'pages',
                     name: "The page has pages links",
+                    results: true,
                     selector: '[rel="first"], [rel="last"], [rel="prev"], [rel="next"]',
                     iswarning: true,
                     func: (el, expect) => {
@@ -222,6 +225,7 @@ const Html = {
                     name: "The page has company address",
                     selector: 'address',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }
@@ -231,6 +235,7 @@ const Html = {
                     name: "The page has phone number",
                     selector: 'a[href^="tel:"]',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }
@@ -240,6 +245,7 @@ const Html = {
                     name: "The page has Email address",
                     selector: 'a[href^="mailto:"]',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }

@@ -3,7 +3,7 @@ import "./Test.scss"
 import React, { Component } from "react"
 import { withTranslation } from 'react-i18next'
 
-import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from "react-icons/io"
+import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
 
 import chai from "../../lib/chai"
 
@@ -56,6 +56,18 @@ class Test extends Component {
 
         const className = [status ? "success" : (test.iswarning ? "warning" : "fail"), expanded && results ? "expanded" : ""].join(' ');
 
+        let code = null;
+        if (results && el.length) {
+            if (typeof results == 'function') {
+                console.log('test');
+                code = results(el);
+            } else {
+                code = el.map(item => item.outerHTML).join("\n");
+            }
+            console.log(code);
+        }
+
+
         return (
             <div className={ "seo-checker-test " + className }>
                 <div>
@@ -64,21 +76,19 @@ class Test extends Component {
                         results ?
                         <a onClick={ () => { console.log(expanded); this.setState({ expanded: !expanded }); } }>
                             {
-                                expanded ? <IoIosRemoveCircleOutline /> : <IoIosAddCircleOutline />
+                                expanded ? <AiFillMinusSquare /> : <AiFillPlusSquare />
                             }
                         </a>
                         : ''
                     }
                 </div>
                 {
-                    results ?
-                    <pre>
-                        <code>
-                            {
-                                el.map(item => item.outerHTML).join("\n")
-                            }
-                        </code>
-                    </pre>
+                    code ?
+                        <pre>
+                            <code>
+                                { code }
+                            </code>
+                        </pre>
                     : ''
                 }
                 <p>{ message }</p>
