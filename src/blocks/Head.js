@@ -11,6 +11,7 @@ export const Header = {
                     slug: 'exists',
                     selector: "head > title",
                     name: "The page has title tag",
+                    results: true,
                     func: (el, expect) => {
                         expect(el).to.exist;
                     },
@@ -54,6 +55,7 @@ export const Header = {
                     name: "The page has author meta tag",
                     selector: "head > meta[name='author']",
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
                         const content = el[0]?.getAttribute('content') ?? '';
@@ -64,6 +66,7 @@ export const Header = {
                     slug: 'description',
                     name: "The page has description meta tag",
                     selector: "head > meta[name='description']",
+                    results: true,
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
                         const content = el[0]?.getAttribute('content') ?? '';
@@ -87,6 +90,7 @@ export const Header = {
                     name: "The page has robots meta tag",
                     selector: "head > meta[name='robots']",
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
                     },
@@ -129,6 +133,7 @@ export const Header = {
                 {
                     slug: 'exists',
                     name: "The page has Open Graph meta tags",
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -170,6 +175,7 @@ export const Header = {
                     slug: 'exists',
                     name: "The page has alternate languages",
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }

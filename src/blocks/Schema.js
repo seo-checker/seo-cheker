@@ -46,6 +46,12 @@ const Schema = {
                             slug: 'breadcrumbs',
                             name: "Breadcrumbs JSON-LD exist and there is only one breadcrumbs block",
                             iswarning: true,
+                            results: (el) => {
+                                return el.map(item => {
+                                    const content = item.innerText;
+                                    return content.indexOf('BreadcrumbList') !== -1 ? item.outerHTML : false;
+                                }).filter(Boolean).join("\n");
+                            },
                             func: (el, expect) => {
                                 const results = el.map(item => {
                                     try {
@@ -100,6 +106,12 @@ const Schema = {
                             slug: 'articles',
                             name: "Articles JSON-LD exists on page",
                             iswarning: true,
+                            results: (el) => {
+                                return el.map(item => {
+                                    const content = item.innerText;
+                                    return content.indexOf('NewsArticle') !== -1 ? item.outerHTML : false;
+                                }).filter(Boolean).join("\n");
+                            },
                             func: (el, expect) => {
                                 const results = el.map(item => {
                                     try {
@@ -146,6 +158,12 @@ const Schema = {
                             slug: 'products',
                             name: "Products JSON-LD exists on page",
                             iswarning: true,
+                            results: (el) => {
+                                return el.map(item => {
+                                    const content = item.innerText;
+                                    return content.indexOf('Product') !== -1 ? item.outerHTML : false;
+                                }).filter(Boolean).join("\n");
+                            },
                             func: (el, expect) => {
                                 const results = el.map(item => {
                                     try {
@@ -231,6 +249,7 @@ const Schema = {
                             slug: 'breadcrumbs',
                             name: "Breadcrumbs microdata exist and there is only one breadcrumbs microdata on page",
                             selector: '[itemtype*="BreadcrumbList"]',
+                            results: true,
                             iswarning: true,
                             func: (el, expect) => {
                                 expect(el).not.to.be.empty;
@@ -268,6 +287,7 @@ const Schema = {
                             name: "Article microdata exists on page",
                             selector: '[itemtype*="Article"]',
                             iswarning: true,
+                            results: true,
                             func: (el, expect) => {
                                 expect(el).not.to.be.empty;
                                 const results = el.map(item => {
@@ -311,6 +331,7 @@ const Schema = {
                             name: "Products microdata exists on page",
                             selector: '[itemtype*="Product"]',
                             iswarning: true,
+                            results: true,
                             func: (el, expect) => {
                                 expect(el).not.to.be.empty;
                                 const results = el.map(item => {

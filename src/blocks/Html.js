@@ -18,6 +18,12 @@ const Html = {
                     slug: 'header',
                     name: "The page has header tag",
                     selector: 'header',
+                    results: (el) => {
+                        return el.map(item => {
+                            const isBlockHeader = item.closest('article') || item.closest('main') || item.closest('section');
+                            return !isBlockHeader ? item.outerHTML : false;
+                        }).filter(Boolean).join("\n");
+                    },
                     func: (el, expect) => {
                         let headers = [];
                         headers = el.map(node => {
@@ -32,6 +38,7 @@ const Html = {
                     slug: 'nav',
                     name: "The page has nav tag",
                     selector: 'nav',
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -55,6 +62,7 @@ const Html = {
                     slug: 'main',
                     name: "The page has main tag",
                     selector: 'main',
+                    results: true,
                     iswarning: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
@@ -73,6 +81,7 @@ const Html = {
                     slug: 'h1',
                     name: "The page has H1 tag",
                     selector: 'h1',
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -91,6 +100,7 @@ const Html = {
                     name: "The page has article tags",
                     selector: 'article',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -134,6 +144,7 @@ const Html = {
                     name: "The page has section tags",
                     selector: 'section',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -161,6 +172,7 @@ const Html = {
                     name: "The page has sidebars",
                     selector: 'aside',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }
@@ -169,6 +181,7 @@ const Html = {
                     slug: 'footer',
                     name: "The page has footer",
                     selector: 'footer',
+                    results: true,
                     func: (el, expect) => {
                         let footers = [];
                         footers = el.map(node => {
@@ -184,6 +197,7 @@ const Html = {
                     name: "The page has images",
                     selector: 'img',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     },
@@ -205,6 +219,7 @@ const Html = {
                 {
                     slug: 'pages',
                     name: "The page has pages links",
+                    results: true,
                     selector: '[rel="first"], [rel="last"], [rel="prev"], [rel="next"]',
                     iswarning: true,
                     func: (el, expect) => {
@@ -222,6 +237,7 @@ const Html = {
                     name: "The page has company address",
                     selector: 'address',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }
@@ -231,6 +247,7 @@ const Html = {
                     name: "The page has phone number",
                     selector: 'a[href^="tel:"]',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }
@@ -240,6 +257,7 @@ const Html = {
                     name: "The page has Email address",
                     selector: 'a[href^="mailto:"]',
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).not.to.be.empty;
                     }
