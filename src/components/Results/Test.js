@@ -61,23 +61,32 @@ class Test extends Component {
         let code = null;
         if (results && el.length) {
             if (typeof results == 'function') {
-                console.log('test');
                 code = results(el);
             } else {
-                code = el.map(item => item.outerHTML).join("\n");
+                code = el.map(item => item.outerHTML).join("\n\n");
             }
         }
 
-        code = html(code, { indent_size: 2, space_in_empty_paren: false });
+        if (expanded) {
+            let cloned = document.createElement('div');
+            cloned.innerHTML = code;
+            cloned.childNodes.forEach(child => {
+                child.childNodes.forEach(subchild => {
+                    subchild.innerHTML = "...";
+                });
+            });
+            code = cloned.innerHTML;
 
+            code = html(code, { indent_size: 2, space_in_empty_paren: false });
+        }
 
         return (
             <div className={ "seo-checker-test " + className }>
                 <div>
                     { t(slug, name) }
                     {
-                        results ?
-                        <a onClick={ () => { console.log(expanded); this.setState({ expanded: !expanded }); } }>
+                        results && code ?
+                        <a onClick={ () => { this.setState({ expanded: !expanded }); } }>
                             {
                                 expanded ? <AiFillMinusSquare /> : <AiFillPlusSquare />
                             }

@@ -55,6 +55,7 @@ export const Header = {
                     name: "The page has author meta tag",
                     selector: "head > meta[name='author']",
                     iswarning: true,
+                    results: true,
                     func: (el, expect) => {
                         expect(el).to.have.lengthOf(1);
                         const content = el[0]?.getAttribute('content') ?? '';

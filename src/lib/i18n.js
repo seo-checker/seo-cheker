@@ -15,7 +15,7 @@ i18n
             loadPath: (document.seo ?? '') + '/locales/{{lng}}/{{ns}}.json'
         },
         fallbackLng: 'en',
-        debug: true
+        // debug: true
     });
 
 export default i18n;
