@@ -1,4 +1,4 @@
-# SEO Cheker
+# SEO Checker
 
 Simple on page [JS SEO checker](https://seo-checker.github.io/), based on React, Redux and Chai
 
